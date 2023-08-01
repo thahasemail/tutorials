@@ -1,0 +1,2 @@
+Install Save typing and Live Server extensions.
+

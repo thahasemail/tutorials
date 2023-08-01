@@ -1,0 +1,92 @@
+React.js used for front end web application developments
+
+React Native used for mobile application developments
+
+Used for single page applications (SPA)
+
+It is V of MVC
+
+HTML is written in the form of JSX (Javascript and XML)
+
+state = Variables
+
+setState = Change the state
+
+props = pass state to child components
+
+Why should u learn REACT ? 
+
+a. You can write reusable codes (Components)
+
+b. Develop mobile apps with Reactive Native
+
+c. Faster page switching
+
+d. It does not refresh
+
+npm -v
+
+node -v
+
+Install React
+-------------
+
+Method 1.
+--------
+npx create-react-app my-app
+
+Method 2
+--------
+
+npm install -g create-react-app // install in local system
+
+create-react-app my-app // Install is possible when in offline
+
+code . //short cut for opening visual studio
+
+File structure in react app.
+----------------------------
+package.json
+package-lock.json
+README.md
+.gitignore
+node_modules
+public
+	index.html // Root element
+src
+	index.js
+	App.js
+	App.css
+	serviceWorker.js // For running in offline and in background
+
+
+----------
+
+ReactDOM.render(<App />,document.getElementById("root"));  //index.js
+
+start the application - npm start
+
+localhost:3000/
+
+
+Install following extensions
+----------------------------
+
+1. Plugin Prettier for code format
+
+2. Simple React Snippets 
+
+3. ES7 React/Redux/GraphQL Snippets
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+1. Function component created using functions
+
+2. Class component created using class
+

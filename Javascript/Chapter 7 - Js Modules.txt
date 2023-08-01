@@ -1,0 +1,119 @@
+variables.js
+------------
+
+export const myString = "Debug";
+
+export const myFunc = () =>{
+
+return 10;
+
+}
+
+We need to use above variable and functions in module.js
+
+import {myString, myFunc} from "./variables.js";
+
+inorder to access above functions we need to declare type attribute of script tag.
+Example is 
+
+<script type="module" src="modules.js" ></script>
+
+Following thigs are also valid
+
+import {myString as str, myFunc as func} from "./variables.js";
+
+Another way variables.js
+-----------------------
+
+const myString = "Debug";
+
+const myFunc = () => {
+
+return 10;
+
+}
+
+export{myString, myFunc};
+
+Export default
+--------------
+
+
+const myString = "Debug";
+
+export default const myFunc = () => {
+
+return 10;
+
+}
+
+export{myString};
+
+module.js - import default
+----------
+
+import testfunction from "./variables.js";
+
+--------------------------------------------
+
+
+For importing all
+
+import * as utils from "./variables.js";
+
+console.log(utils.myFunction());
+
+cannot call default export function using its name
+
+console.log(utils.myFunc()); // It will throw an error
+
+following is the correct way
+
+console.log(utils.default());
+
+Converting string to number tricky method
+---------------------------------------------
+const myString = "10";
+
+const convertInt = +myString; or const convertInt = myString | 876;  
+
+console.log(typeof convertInt); //Return number
+
+Another tricks
+--------------
+
+const myObj= {
+	id: 10,
+	name: "Debug"
+
+}
+
+const newObj = myObj.id || 15;  //return 10
+
+if myObj.id is 0 or "" or false then it return 15
+
+The above issue is solved using ?? symbol
+
+
+const newObj = myObj.id ??  15;  // It return 0, "" or false
+
+This is known as Nullish Coalescing
+
+Self invoking functions
+-----------------------
+
+(function test(){
+console.log("running");
+})();
+
+
+
+
+
+
+
+
+
+
+
+

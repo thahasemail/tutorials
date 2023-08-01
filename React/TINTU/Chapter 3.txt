@@ -1,0 +1,29 @@
+JSX - Javascript and XML
+
+
+create an element with javascript.
+
+
+var x = React.createElment("p",{id:"test"},"Some content");
+
+Babel convert JSX to javascript;
+
+Jsx tags should be enclosed in a parent tag.
+
+1. <React.Fragment></React.Fragement>
+
+2. <>   </>
+
+3. <div>{1+1}</div>  //Out put will be <div>2</div>. Inside brackets jsx consider as a javascript
+
+4. <div>{document.write("Thaha"); }</div>
+
+5. function App(){
+
+let age = 16;
+
+<div>
+You are {a<18?"not eligible":"eligible"} for voting.
+</div>
+
+}

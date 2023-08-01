@@ -1,0 +1,201 @@
+1. Spread Operators.
+--------------------
+
+Objects and arrays are mutable(we can change value)
+
+String and numbers are immutable(We cannot change value)
+
+Objects and arrays are passed by reference.So it will change the value of parents also when child value changing.
+
+const player1 = {...globalObject} // Passing copy not the actual reference
+
+const player1 = [...globalObject] //Spreading arrays
+
+const player1 = Object.assign({},globalObject) //If it is an object
+
+const player1 = Object.assign([],globalObject) //If it is an array
+
+
+Spread operator is better than Object method. 
+
+Concatinating two arrays with concat method
+
+const player1 = globalPlayer1.concat(globalPlayer2);
+
+
+Concatinating two arrays with spread operator
+
+const player1 = {...globalPlayer1,...globalPlayer2};
+
+Pushing to an array
+
+const player1 = [...globalPlayer,"Test"];
+
+2. Destructuring
+----------------
+
+Array desctructuing
+
+const myArray = ["Rahul","Ajay","Sandra"];
+
+const [first,second,third] = myArray; 
+
+Object destructuring
+
+const globalPlayer = {
+	id: 0,
+	name:"Thaha",
+	age: 40
+	}	
+
+const {id,age,name} = globalPlayer; //Order of key is not important but name of key should be same.
+
+3. Rest 
+.......
+
+const {id, ...rest} = globalPlayer;  
+
+4. Arrow Functions
+------------------
+
+const myFunc = (a,b) => {
+	return a+b;
+}
+
+const myFunc =  a => a;
+
+5. Foreach
+----------
+
+const globalPlayer = [
+	{
+	id:0,
+	name:"Thaha",
+	age:40
+	},
+	{
+	id:1,
+	name:"Sandra",
+	age:43
+	},
+	{
+	id:2,
+	name:"Kite",
+	age:44
+	},
+];
+
+globalPlayer.forEach(function (value,index,array){
+	console.log(value.name );
+});
+
+using arrow function
+
+globalPlayer.forEach( (value,index,array) => console.log(value.name));
+
+
+6. Map method
+-------------
+
+newArray = 
+globalPlayer.map(
+(value,index,array)=> {
+	return value.name;
+}
+);
+
+
+7. Filter
+----------
+
+newArray = globalPlayer.filter( (value,index,array)=> value.age === 20 && name == 'Thaha');
+
+8. Reduce :  It doing calculations
+-----------
+const numbArray = [12,23,45,67,8];
+
+sum = newArray.reduce( (total,value,index,array)=> total + value, 0); => Inital value set as 0
+
+sum = newArray.reduce( (total,value,index,array)=> total + value, 10); => Inital value set as 10
+
+9. Find
+-------
+
+newObj = globalPlayer.find( (value,index,array) => value.name === 'Rahul');
+
+10. Sort
+--------
+
+const numbArray = [12,23,45,67,8];
+
+numbArray.sort(); //sort will do sort correctly if it is a string, if it is a number it wont work 
+
+sortedNumber = numArray.sort( (a,b)=> a-b); assending order
+
+sortedNumber = numArray.sort( (a,b)=> b - a); descending order
+
+11. ES10 Syntax
+----------------
+const numbArray = [12,23,[12,34,[45,56]],45,67,8];
+
+numbArray.flat(); //only upto some extend
+
+numbArray.flat(Infinity); //All inner array will be flattened
+
+
+//Normal js
+if(globalPlayer && globalPlayer.company && globalPlayer.company.companyName){
+console.log(globalPlayer.company.companyName);
+}
+
+New ES10 syntax for above ... with chaining
+
+if(globalPlayer? .company? .companyName?){
+console.log(globalPlayer.company.companyName);
+}
+
+It is possible to chain all high order methods
+
+Egs:
+
+const numbArray = [12,23,45,67,8];
+
+const numbArray.map( (value) => value).
+filter((data) => data > 15).
+sort((a,b)=>a-b).
+reduce((total,value) => total + value, 0);
+
+
+12. DOM Selectors
+--------------------
+
+document.querySelector("#header").innerHTML = "Thaha"; //with id
+
+document.querySelector(".header").innerHTML = "Thaha"; //with class. First element will be replaced
+
+document.querySelectorAll(".header")[0].innerHTML = "Thaha";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

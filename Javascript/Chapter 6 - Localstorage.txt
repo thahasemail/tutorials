@@ -1,0 +1,29 @@
+localStorage.setItem("name", "Orion"); 
+
+localStorage.getItem("name");
+
+localStorage.removeItem("name"); - remove an item
+
+localStorage.clear( ); - remove all localstorage item
+
+local storage keep as a string. No Object there.  
+
+localStorage.key(0); //Retrieve key using index, here it is "name";
+
+const obj = {
+	id:0,
+	name:"Orion",
+}
+
+We cannot save an object directly to the browser's local storage.So we convert this object into string using stringify  
+
+localStorage.setItem("data", JSON.stringify(obj));
+
+const data = JSON.parse(localStorage.getItem("data"));
+
+
+
+
+
+
+

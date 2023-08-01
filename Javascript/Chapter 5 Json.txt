@@ -1,0 +1,47 @@
+Json - Javascript object notation
+
+Template Literals
+-----------------
+const str = `
+	test
+	${variablename}
+	test
+	`;
+
+
+
+normalobject = {
+	firstname : "Thaha",
+	age : 40
+}
+
+jsonobject = '{
+
+	"firstname" : "thaha",
+	"age" : 40
+}';
+
+There is a quoate in key of the json.
+
+typeof jsonobject is string;
+
+Accessing json 
+------------------
+const parsedJson = JSON.parse(jsonobject);
+
+const name = jsonobject.firstname;
+
+
+convert object into json string
+-------------------------------
+
+const stringifyJson = JSON.stringify(parsedJson);
+
+typeof stringifyJson is string;
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+All the functions in PHP is invokable inside braces in the template
+
+eg : {{date("Y-m-d")}}
+
+If in blade
+
+1. @if($age == 18)
+<h1>Allowed</h1>
+@else
+<h1>Not allowed</h1>
+@endif //There is no braces for if statements
+-----------------
+
+
+2. @unless($age == 18)
+//Opposite of if
+
+@endunless
+
+3. @isset()
+
+//If variable is set
+
+@endisset
+
+4. @empty()
+
+@endempty
+
+5. @switch($type)
+
+	@case(1)
+
+
+	@break
+
+	@case(2)
+
+	@break
+
+	@default
+
+@endswitch;
+
+6.Loops
+
+@for($i=0;$i<10;$i++)
+
+
+@endfor
+
+7. @foreach ($colors as $color)
+	{{$loop->iteration}} {{$loop->index}}
+	//iteration start from 1 index starts from 0
+@endforeach
+
+ @foreach ($colors as $color)
+	<h1 @if ($loop->first) class="first" @elseif($loop->last) class="last" @endif ></h1>
+ @endforeach
+
+
+8. @include("menu");  //Check whether the menu.blade.php is in the views folder
+
+9.  @include("partials.menu"); //inside partials folder 
+
+10.  @php
+
+	echo "inside blade";
+
+	@endphp
+
+11. layout/master.blade.php
+	in the master we have yield it like
+	<nav>@include("partials.menu")</nav>
+	<div>
+		@yield("content");
+	</div>
+
+    Another page ->
+
+     @extends("layout.master");
+	@section("content")
+
+	//This is the content page
+
+	@endsection
+
+
+@section("title","This is the title");
+@section("title","About Us");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

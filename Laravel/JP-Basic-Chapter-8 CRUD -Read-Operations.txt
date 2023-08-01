@@ -1,0 +1,88 @@
+$users = User::all();
+
+$user = User::find(43); //select * from users where id = 43; //This result is in the object itself // $user.name
+
+Change in the model
+
+protected $primaryKey = "user_id"; 
+
+
+$user = User::where("user_id","=",43)->get(); // This result is in the first array element so // we access like $user[0].name
+
+$user = User::where("user_id","=",43)->first(); //Only one row return //Access like $user.name
+$user = User::where("email","=",'oscar27@example.com')->first();
+$user = User::where("email",'oscar27@example.com')->first();
+
+$users = User::whereIn("user_id",[43,23])->get();
+
+Eloquent ORM - Object Relational Mapping
+
+Query Builder
+
+Accessor for manipulating data before fetch. DOB is example
+
+ public function getDateOfBirthAttribute($value){
+	return date("d-M-Y",strtotime($value));
+ }
+
+----------------------------------------------------------Adding a new column-------
+    public function getDateOfBirthFormatedAttribute(){   //date_of_birth_formated
+        return date("d-M-Y",strtotime($this->date_of_birth));
+     }
+    
+     protected $appends = ['date_of_birth_formated'];
+
+------------------------------------------------------------------------------------
+
+Overriding tables -  protected $table = "Customers";
+
+---------------------------------------------------
+     public function scopeActive($query){
+        return $query->where('status',1);
+     }
+  $users = User::active()->get();
+
+-----------------------------------------
+Get count 
+
+ $users_count = User::active()->count();
+
+Order By
+
+ $users = User::active()->orderBy('name','ASC')->get();
+
+
+ $users = User::active()->latest()->get();
+
+ $users = User::active()->oldest()->limit(10)->get();
+
+ $users = User::active()->oldest()->limit(10)->skip(5)->get();
+--------------------------------------------------------------------
+
+ @foreach($users as $user)
+    <tr>
+      <th scope="row">{{$loop->iteration}}</th>
+      <td>{{$user->name}}</td>
+      <td>{{$user->email}}</td>
+      <td>
+        <a href="#" class="btn btn-primary">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+
+
+      </td>
+    </tr>
+    @endforeach
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+Javascript can be run using Quokka.js plugin
+
+Javascript is a single threaded programming language
+
+But Java is a multiple threaded programming language
+
+But service worker in JS allow us to run in multiple thread at a time
+
+Javascript is a syncronouse language
+
+Javascript run from top to bottom
+
+Javascript run using node 
+
+node index.js
+
+It is possible to make Javascript assynchronous means we can run another program without blocking first one
+
+setTimeout( ()=> {
+console.log("Running");
+},3000);
+
+
+Event loop check the stack is empty and Quee has content
+
+Async js pgm will be executed only after stack is empty
+
+Async pgm like setTimeout will go to web API first 
+
+Then it move to Quee
+
+Then Event loop move it to stack when stack became empty
+
+
+How the below code work 
+
+setTimeout( ()=> {
+console.log("Running");
+},0);
+
+The above code will work only after all sync programm worked
+
+The blow code is also moved to Quee and wait for next click this
+
+const button document.querySelector("button");
+
+button.addEventListener("click", () => {
+	console.log("Button Clicked");
+});
+
+
+
+
+
+

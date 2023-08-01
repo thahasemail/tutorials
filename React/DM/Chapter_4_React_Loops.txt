@@ -1,0 +1,77 @@
+Controlled Components and UnControlled Components
+--------------------------------------------------
+
+In controlled components everything is written using REACT features not DOM features.
+In uncontrolled coponenets we are written using DOM features.
+
+Uncontrolled component
+----------------------
+import React,{Component} from "react";
+
+class Form extends Component{
+    constructor(props){
+        super(props);
+        this.inputOne = React.createRef();
+        this.inputTwo = React.createRef();
+    }
+    
+
+    onSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.inputOne.value);
+        console.log(this.inputTwo.value);
+   
+    }
+    render(){
+
+        return(
+            <form>
+            <h1>Form Component</h1>
+            <input type="text" name="firstName" ref={input => this.inputOne = input} ></input>
+            <input type="text" name="lastName" ref={input => this.inputTwo = input} ></input>
+            <button onClick={this.onSubmit}>Submit</button>
+            </form>
+        );
+    }
+
+}
+export default Form;
+
+Looping with map
+-----------------
+
+import React,{Component} from "react";
+
+class List extends Component{
+
+state = {
+    data: [
+        {
+            id:1,
+            name:"Mustafa",
+            age:44
+        },
+        {
+            id:2,
+            name:"Thaha",
+            age:41
+        },
+    ]
+}
+
+render(){
+    return(
+        <div>
+            <h3>Listing</h3>
+            <ul>{this.state.data.map((value,index) => {
+                return <li>{value.name}</li>
+            } )}</ul>
+        </div>
+
+
+    )
+}
+
+}
+export default List;
+

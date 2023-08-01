@@ -1,0 +1,19 @@
+React is a UI javascript library
+
+Difference between single page and multi page application
+
+React is using a VIRTUAL DOM, so it is fast
+
+Actual DOM using a lot of memory. So it is slow.
+
+Reacts components are reusable.
+
+Babel is a javascript pre-processor.
+
+Babel convert JSX  into normal javascript.
+
+ReactDom library is used to manipulate DOM.
+
+Use codepen.io
+
+

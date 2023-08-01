@@ -1,0 +1,15 @@
+This is using only for dev environment
+
+composer require barryvdh/laravel-debugbar --dev
+
+Log::info("Query executed");
+
+In order to show this use following env variable as
+
+APP_DEBUG=true
+
+
+If we want debug is false and enable debug bar use following settings
+
+APP_DEBUG=false
+DEBUGBAR_ENABLED=true

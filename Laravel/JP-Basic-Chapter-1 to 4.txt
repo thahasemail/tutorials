@@ -1,0 +1,87 @@
+Chapter 2 : Installation
+------------------------
+
+composer create-project laravel/laravel rms
+
+cd rms
+
+php artisan serve => Run the server
+
+Chapter 3 - Routes
+---------
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+php artisan make:controller FrondEndController; 
+
+Route::get("/","FrondEndController@homePage");
+
+You will get this error first time 
+
+Target class [FrondEndController] does not exist.
+
+We can solve this error by 
+
+1. Un comment below code of line from RouteServiceProvider.php
+
+//protected $namespace = 'App\\Http\\Controllers';
+
+->namespace($this->namespace) in the below line
+
+Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/web.php'));
+
+Naming a route
+
+Route::get("/","FrondEndController@homePage")->name("home");
+
+link given to href
+
+    <li><a href="{{ route('home') }}">Home</a></li>
+    <li><a href="{{ route('about') }}">About Us</a></li>
+
+dont use <li><a href="{{ url('home') }}">Home</a></li>
+
+URL should be  hyphen base like about-us, contact-us
+
+rout name should be dot based ->name("about.us");
+
+
+
+Route::get("user/view","FrondEndController@homePage");
+Route::get("user/edit","FrondEndController@homePageEdit");
+
+Grouping route
+--------------
+
+Route::group(["prefix" => "user","as"=>"user."],function(){
+
+Route::get("view","FrondEndController@view")->name("view");
+Route::get("edit","FrondEndController@edit")->name("edit");
+
+});
+
+php artisan route:list   => Listing all routers in command prompt
+-----------------------------------------------------------------
+
+Route::group(["prefix" => "user","namespace"=>"FrondEnd"],function(){
+
+Route::get("view","FrondEndController@view")->name("view");
+Route::get("edit","FrondEndController@edit")->name("edit");
+
+});
+
+What is reverse routing in Laravel ?
+
+Chapter 4 : MVC
+---------------
+$c = 100;
+$name = "Thaha";
+return view('welcome', compact('c',"name"));
+
+In the blade we write like it - {{$c}} {{$name}}
+

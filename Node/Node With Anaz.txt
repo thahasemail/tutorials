@@ -1,0 +1,20 @@
+npm install express --save
+
+Response must be in Head and remains in Head:
+
+res.writeContinue()
+res.statusCode = 404
+res.setHeader(name, value)
+res.getHeader(name)
+res.removeHeader(name)
+res.header(key[, val]) (Express only)
+res.charset = 'utf-8' (Express only; only affects Express-specific methods)
+res.contentType(type) (Express only)
+Response must be in Head and becomes Body:
+
+res.writeHead(statusCode, [reasonPhrase], [headers])
+Response can be in either Head/Body and remains in Body:
+
+res.write(chunk, encoding='utf8')
+Re
+https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client

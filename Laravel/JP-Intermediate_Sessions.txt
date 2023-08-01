@@ -1,0 +1,25 @@
+1. Set the session value in laravel -> session()->put("username","thaha");
+
+2. Get the session value in laravel -> session()->get("username");
+
+3. In blade also the same method we use to get the session value.
+
+4. Increment session value session()->increment("user_id");
+
+5. Increment by a value say 12 , then we use like session()->increment("user_id", 12);
+
+6. Similarly decrement session()->descrement("user_id");
+
+7. session()->decrement("user_id", 12);
+
+8. flashing - show only one times
+
+   session()->flash("date",date());
+
+9. Delete a session - session()->forget("username");
+
+10. Remove all session datas session()->flush();
+
+11. session()->has("message") => check whether all message session exists
+
+

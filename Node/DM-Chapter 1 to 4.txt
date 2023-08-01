@@ -1,0 +1,168 @@
+npm init
+
+npm init -y => create all with default value
+
+Running by typing npm script.js
+
+or without extension
+
+npm script
+
+const arr = ["A","B","C"];
+
+console.log(arr);
+
+arr.push("d);
+
+console.log(arr);
+------------------
+
+const newArray = [...array,"d"];
+
+setInterval( () => {
+
+console.log("Running");
+
+},5000);  // Running every 5 milli seconds
+
+setTimeout( ()=>{
+
+console.log("Running");
+
+}, 1000);  // Running once after 1 second
+
+--------------------
+setInterval should be clear once it called other wise it make memory leak
+
+const interval =  setInterval( () => {
+
+console.log("Running");
+
+},1000);  // Running every 1 milli seconds
+
+setTimeout( ()=>{
+
+clearInterval(interval);
+
+
+}, 3000);  //set Interval will be cleared after 3 seconds
+
+
+In client side window object give  functions like getElementById, localStorage, onClick,setInterval,setTimeout etc.
+These are not available in node. Instead of this they proide a global object.
+That provide console.log,setInterval,setTimeout etc
+
+If u want to see the global functions please run following 
+
+console.log(global);
+
+Node features
+--------------
+
+console.log(__filename); //This will provide file name. In out case script.js
+
+console.log(__dirname);  //This will provide directory name.
+
+In node.js packages are called as module
+
+1. path module
+---------------
+
+const path = require("path"); // including path module
+console.log(path) // It will display all path functions and properties
+
+console.log(path.basename(__filename)); // return script.js
+
+console.log(path.extname(__filename)); //return .js
+
+console.log(path.dirname(__filename));
+
+console.log(path.join(__dirname,"api","api.js"));
+
+2. fs module
+
+const fs = require("fs");
+
+console.log(fs);
+
+Create a new files path
+
+fs.mkdir(path.join(__dirname,"api",{},(err)=>{ 
+	if(err) throw err;
+}));
+
+
+if u want to create a file use following code
+
+
+fs.mkdir(path.join(__dirname,"api/api.php",{},(err)=>{ 
+	if(err) throw err;
+}));
+
+
+
+fs.rmdir(path.join(__dirname,"api/api.php",{recursive:true},(err)=>{ 
+	if(err) throw err;
+}));
+
+write new file
+
+fs.writeFile(path.join(__dirname,"api","filename.php","username : debug",(err)=>{ 
+	if(err) throw err;
+}));
+
+
+const user = "Thaha";
+
+fs.writeFile(path.join(__dirname,"api","filename.php",`username : ${user}`,(err)=>{ 
+	if(err) throw err;
+}));
+
+
+
+const user = "Thaha";
+
+fs.appendFile(path.join(__dirname,"api","filename.txt",`username : ${user}`,(err)=>{ 
+	if(err) throw err;
+}));
+
+
+fs.readFileFile(path.join(__dirname,"api","filename.txt","utf8",(err, data)=>{ 
+	if(err) throw err;
+	console.log(data);
+}));
+
+
+Events
+------
+
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+//Create an event handler:
+var myEventHandler = function () {
+  console.log('I hear a scream!');
+}
+
+//Assign the event handler to an event:
+eventEmitter.on('scream', myEventHandler);
+
+//Fire the 'scream' event:
+eventEmitter.emit('scream');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

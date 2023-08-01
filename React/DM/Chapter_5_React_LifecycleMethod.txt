@@ -1,0 +1,11 @@
+1. componentDidMount()
+
+This will be triggered once component loading
+
+2. componentWillUnmount()
+
+This will be triggered when moving from one page to another
+
+3.
+
+Pure component - it will not rerender if value is not changed

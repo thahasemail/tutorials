@@ -1,0 +1,425 @@
+Chapter 1.
+----------
+
+Javascript is a language of a browser.
+
+It is used for client side validation and Dom manipulations.
+
+Dom Manipulation.
+-----------------
+
+document.getElementById("header").innerHTMl = "Orion";
+
+document.getElementsByClassName("header")[0].innerHTMl = "First Classname";
+document.getElementsByClassName("header")[1].innerHTMl = "Second";
+
+document.getElementsByTagName("h1")[0].innerHTMl = "Orion1";
+
+document.getElementById("header").style.display = "none"; // or "block"
+document.getElementById("header").style.fontSize = "22px";
+document.getElementById("header").style.color = "red";
+document.getElementById("header").style.backgroundColor = "red";
+
+Comments
+---------
+
+// single comment
+
+/* Multiline comments */
+
+Variables
+---------
+Variable is a place holder for storing data.
+
+var test = document.getElementById("header");
+
+var a,b,c;
+
+Artithmetic Operator
+--------------------
+
++, - , * , / and %
+
+Increment (++) and Decriment operator (--).
+
+a++;
+
+b--;
+
+a += 1;
+
+b -= 10; b = b - 10;
+
+Chapter 2.
+----------
+
+Var , Let and Const
+
+Var is functional  scope
+
+Let and Const is block scope
+
+Variable name doesn't start by a number like 2name.
+it should start using a _ or character or a $ sign.
+
+const should be assigned when it is declare.
+
+Egs const b = 10;
+
+const b ; // it is invalid since there is no value assigned 
+
+You cannot change a const value
+
+b = 20; // It is throw an error since it is already assigned a value
+
+When value changing we use let
+
+egs. let score = 0;
+
+but a person's name is not changing so we use const name = "Thaha";
+
+--------------------------------
+function varScoping() {
+  var x = 1;
+
+  if (true) {
+    var x = 2;
+    console.log(x); // will print 2
+  }
+
+  console.log(x); // will print 2
+}
+
+function letScoping() {
+  let x = 1;
+
+  if (true) {
+    let x = 2;
+    console.log(x); // will print 2
+  }
+
+  console.log(x); // will print 1
+}
+------------------------------------
+
+
+
+DataTypes
+---------
+
+1. String
+
+let name = 'thaha';
+console.log(typeof name); // It returns String
+
+2. Number
+
+let age = 10;
+
+console.log(typeof age); // It returns number
+
+3. Array
+ let arr = [];
+ console.log(typeof arr); // It returns object
+
+ It is an object data type
+
+
+4. let myString = null;
+
+console.log(typeof myString); // It returns object
+
+5. let error = undefined;
+ console.log(typeof error); // It returns undefined
+
+6. boolean
+
+boolean test = false;
+console.log(typeof logged) ; // It returns boolean
+
+Q. Difference between undefined and not defined ? 
+
+undefined means value is not defined but variable is declared.
+not defined means variable is not declared but pgm try to call that variable.
+
+Comparison Operator
+-------------------
+< > <= >= == === != 
+
+Logical operators
+---------------------------
+
+&& || !
+
+Conditional/Ternary Operators
+-----------------------------
+
+x = 5 ? "test" : "else";
+
+Linking js in the html =  <script src="test.js" > </script>
+
+
+
+CHAPTER - 3
+-----------
+
+a. Functions
+
+function fnc(a,b){
+
+return a + b;
+
+}
+
+call a function func(5,6);
+
+Arrow Functions
+---------------
+myFunc = (a,b) => {
+ let c;
+ c = a+b;
+return c;
+
+}
+
+myFunc = (a) => a;
+
+myFunc = a => a;
+
+alert("test");
+
+
+
+Objects
+-------
+Array is also an objects.
+
+let userObject = {
+	firstName : "Muhamad",
+	lastName : "Thaha"	
+};	
+
+It stores as key:value pair
+
+Accessing objects : console.log(userObject.firstName);
+
+
+Array
+-----
+
+Array is index based
+
+let myArray = ["test1","test2",2,3];
+
+console.log(myArray[0]);
+
+Methods
+-------
+
+a. String methods
+
+let a = "Debug M";
+
+console.log(a.length); //Returns 7
+
+console.log(a.indexOf("M")); // Position of M. It is 6
+
+console.log(a.indexOf("H")); // Returns -1 since there is no H
+
+console.log(a.indexOf("Debug")); // Position of Debug. It is 0th position
+
+console.log(a.search("Debug"));  //Same as indexOf method
+
+let a = "Debug M M";
+
+console.log(a.lastIndexOf("M")); // Position of last M. It is 8th position
+
+
+let a = "Debug M";
+
+a.slice(starting position, end position); //end position is optional
+a.slice(0,4); //returns Debug
+
+b. Number Methods
+-----------------
+
+Convert a string into number
+
+let a = "15";
+
+parseInt(a); typeof a ; return number;
+
+convert a number into string
+
+a.toString();
+
+c. Array Methods
+----------------
+
+let array = ["A","B","C"];
+
+ Manipulate the array element array[0] = "Z";
+
+Add element to last 
+
+array.push("K");
+
+Remove from last element of an array
+
+array.pop();
+
+add element to fisrt element of array
+
+array.unshift("U");
+
+Remove first element from array
+
+array.shift();
+
+length of an array
+
+array.length;
+
+let myArray = ["A","B","C"];
+
+myArray.splice(0,2); It will remove first two element from 0th position
+
+myArray.splice(2,1); It will remove one element starting from position 2
+
+add Element using splice
+
+myArray.splice(2,0,"D","E"); //Result is ["A","B","D","E","C"]
+
+Slice in Array
+--------------
+
+newArray = myArray.slice(1); return ["B","C"]
+
+
+let myArray = ["C","B","A"];
+
+myArray.sort();  It will sort alphabetically
+
+myArray.reverse(); It will do reverse alphabetic sorting
+
+
+Objects
+-------
+
+let userObject = {
+	firstName : "Muhamad",
+	lastName : "Thaha"	
+};
+
+Editing object
+
+userObject.firstName = "Mustafa";
+
+
+delete userObject.firstName; Delete firstName element from object
+
+IF
+--
+
+if(condition){
+
+
+}else if(condition){
+
+}
+else{
+
+}
+
+SWITCH
+------
+
+let fruit = "Banana";
+
+switch(fruit){
+
+	Case "Bnana":
+	console.log("It is Banana");
+	break;
+
+	Case "Apple":
+	console.log("It is Apple");
+	break;
+
+	default :
+	console.log("No fruit");
+	
+}
+
+
+LOOPS
+-----
+
+a. For loop
+
+for(let i = 0; i <= 10; i++){
+	console.log(i);
+}
+
+b. While Loop
+
+while(i<10){
+console.log(i);
+i++;
+}
+
+c. do ... while loop
+
+do{
+console.log(i);
+i++;
+}while(i<10);
+
+d. for .... of
+
+myArray = ["A","B","C"];
+
+for (let x of myArray){
+
+document.write(x + "<br/>") // Return values
+
+}
+
+e. for ... in
+
+let userObject = {
+	firstName : "Muhamad",
+	lastName : "Thaha"	
+};
+
+for (let x in userObject){
+document.write(x + "<br/>");  // It will return key (firstName,lastName) of the object not value
+}
+
+
+for (let x in userObject){
+document.write(userObject[x] + "<br/>");  // It will return value of the object
+}
+
+
+EVENTS
+------
+onclick
+onfocus
+onblure  etc
+
+element = document.getElementById("btn");
+
+method-1.
+-------
+element.addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "Hello World";
+});
+
+method-2
+--------
+element.addEventListener("click", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}

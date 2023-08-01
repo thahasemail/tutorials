@@ -1,0 +1,117 @@
+Migration is the database table version controlling
+
+php artisan make:migration create_users_table --create=users
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateUsersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users', function (Blueprint $table) {
+            //$table->id(); //id as PK
+		$table->bigIncrement('user_id');
+		$table->string("name",50);
+            $table->date("dob");
+            $table->boolean("status")->default(1)->comment("1 is Active, 0 is Inactive");
+            $table->timestamps();  //Generate created_at and updated_at
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('users');
+    }
+}
+
+For migration use => php artisan migrate
+
+php artisan migrate:rollback   //Last batch's down function will be run
+
+
+Alter migration
+
+php artisan make:migration alter_users_table --table=users
+
+
+Fresh Migration
+
+php artisan migrate:fresh   //Delete all tables and start to import fresh db
+
+In laravel 8 alter_users_table will not be duplecate
+
+<?php
+
+
+//alter_users_table
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            
+            $table->text('description')->after('password')->nullable();
+
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+           
+            $table->dropColumn('description');
+
+        });
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

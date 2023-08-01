@@ -1,0 +1,167 @@
+1. Functional Component
+-----------------------
+import React from "react";
+import "./App.css";
+
+function App(){
+
+ return(
+
+	<div className="App">
+	 <h1>Welcome to React</h1>
+	</div>
+
+ );
+
+}
+export default App;
+
+2. Class component
+-------------------
+import React,{Component} from "react";
+
+class App extends Component {
+
+ render(){
+
+	return (
+	<div className="App">
+
+	<h1>Welcome to class component</h1>
+
+	</div>
+
+	);
+ }
+}
+
+export default App;
+
+React compoent should have only one parent element
+
+
+State
+-----
+import React,{Component} from "react";
+
+class App extends Component {
+
+state = {
+myString1 : "Hello",
+myString2 : "Debug" 
+}; 
+
+// state declared in the lefthand side and state defined in the right hand side
+
+ render(){
+
+	return (
+	<div className="App">
+
+	<h1>Welcome to {this.state.myString1}</h1>
+
+	</div>
+
+	);
+ }
+}
+
+export default App;
+
+Props
+-----
+The values passed from parent component to child component is called as props
+
+Sending props value
+
+<TODO stringOne={this.state.stringOne} />
+
+Receiving props value
+
+import React,{Component} from "react";
+
+class TODO extends Component {
+
+render(){
+return (
+
+	<div className="todo">
+		<h1>{this.props.stringOne}</h1>
+	</div>
+);
+}
+
+}
+
+We cannot change value of props.State value can be changed with only this - setState() method.
+
+change value of state
+---------------------
+
+class App extends Component {
+
+state = {
+myString : "Hello",
+myString2 : "Debug" 
+}; 
+
+// state declared in the lefthand side and state defined in the right hand side
+
+
+	
+	handleChange = ()=> { //This should be an arrow function
+		this.setState(
+		{stringOne:"Media"}
+		)
+
+	}
+
+ render(){
+	return (
+	<div className="App">
+	<button onClick={this.handleChange}>Change Value</button>
+	<h1>Welcome to {this.state.myString}</h1>
+
+	</div>
+
+	);
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

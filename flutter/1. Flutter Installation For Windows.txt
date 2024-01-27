@@ -1,0 +1,9 @@
+Download  and install flutter from https://docs.flutter.dev/get-started/install/windows
+
+Extract above zip file and copied in c:\flutter
+
+Update environement path C:\flutter\bin 
+
+flutter doctor command
+
+

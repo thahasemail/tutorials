@@ -1,0 +1,13 @@
+1. With PHP, there are two basic ways to get output: echo and print.
+
+2. The differences are small: echo has no return value while print has a return value of 1 so it can be used in expressions. 
+	echo can take multiple parameters (although such usage is rare) while print can take one argument. echo is marginally faster than print.
+
+3. The echo statement can be used with or without parentheses: echo or echo()
+
+4. echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+
+5. The PHP print Statement
+
+The print statement can be used with or without parentheses: print or print().
+

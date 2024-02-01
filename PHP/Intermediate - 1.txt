@@ -1,0 +1,44 @@
+1. PHP Data Types
+Variables can store data of different types, and different data types can do different things.
+
+PHP supports the following data types:
+
+String
+Integer
+Float (floating point numbers - also called double)
+Boolean
+Array
+Object
+NULL
+Resource
+
+2. Types of data types
+
+2:a. PHP Integer
+
+An integer data type is a non-decimal number between -2,147,483,648 and 2,147,483,647.
+
+Rules for integers:
+
+An integer must have at least one digit
+An integer must not have a decimal point
+An integer can be either positive or negative
+Integers can be specified in: decimal (base 10), hexadecimal (base 16), octal (base 8), or binary (base 2) notation
+In the following example $x is an integer. The PHP var_dump() function returns the data type and value:
+
+2:b. PHP Float
+
+A float (floating point number) is a number with a decimal point or a number in exponential form.
+
+2:c. PHP Boolean
+
+A Boolean represents two possible states: TRUE or FALSE.
+
+2:d. PHP Array
+
+An array stores multiple values in one single variable.
+
+In the following example $cars is an array. The PHP var_dump() function returns the data type and value:
+
+2:e. PHP Object
+
